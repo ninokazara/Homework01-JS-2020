@@ -60,23 +60,91 @@ cars.push(car4);
 // let average = getAvg(prices);
 // console.log(`Ჩვენს მარაგში არსებული მანქანების საშუალო ფასი არის : ${average}`);
 
-function getMax(array) {
-    if (array.length ===0) {
-        return undefined;
-    }
-}
+// function getMax(array) {
+//     if (array.length ===0) {
+//         return undefined;
+//     }
+// }
  
-let max = array[0];
+// let max = array[0];
 
-for(let i = 1; i < array.length; i++) {
-    if(array[i] < max) {
-        max = array[i];
-    }
-    return max;
+// for(let i = 1; i < array.length; i++) {
+//     if(array[i] < max) {
+//         max = array[i];
+//     }
+//     return max;
+// }
+
+// let prices = [35000, 30000, 18000, 10000];
+
+// let maxElement = getMax(prices);
+
+// console.log(maxElement);
+
+
+// დავალება N 02
+
+let username = "Nina1989"
+let password = "1989"
+
+
+let user1 = {
+    username: "Gio1995",
+    password: "1995"
 }
 
-let prices = [35000, 30000, 18000, 10000];
+let user2 = {
+    username: "Megi1988",
+    password: "1988"
+}
 
-let maxElement = getMax(prices);
+let user3 = {
+    username: "Elena1987",
+    password: "1987"
+}
 
-console.log(maxElement);
+let user4 = {
+    username: "Keti1985",
+    password: "1985"
+}
+
+let users = [];
+users.push(user1);
+users.push(user2);
+users.push(user3);
+users.push(user4);
+
+function findUser(users, possibleUsername) {
+    for(let i = 0; i < users.length; i++) {
+        if(users[i].username === possibleUsername) {
+            return users[i];
+        }
+    }
+}
+
+function checkPassword(user, possiblePassword) {
+    return user.password === possiblePassword;
+}
+
+function login(username, password) {
+    let possibleUser = findUser(users, username);
+    if(!possibleUser) {
+        console.log("მოცემული სახელით მომხმარებელი არ მოიებნა");
+    } else {
+            let isPasswordValid = checkPassword(possibleUser, password);
+            if (isPasswordValid) {
+              console.log("შეხვედით სისტემაში წარმატებით");
+            
+        } else {
+            console.log("პაროლი არასწორია");
+         
+        }
+        if(password.length <=8) {
+            console.log("შეხვედით სისტემაში წარმატებით,თუმცა გთხოვთ შეცვალოთ პაროლი");
+        }
+    }
+
+}
+
+
+login("Gio1995", "1995");
