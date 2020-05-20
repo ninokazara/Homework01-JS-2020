@@ -50,15 +50,33 @@ cars.push(car2);
 cars.push(car3);
 cars.push(car4);
 
-let prices = [car1.price, car2.price, car3.price, car4.price];
 
-function getAvg(prices) {
-    let total = prices.reduce((acc, c) => acc + c, 0);
-    return total / prices.length;
+
+// function getAvg(prices) {
+//     let total = prices.reduce((acc, c) => acc + c, 0);
+//     return total / prices.length;
     
+// }
+// let average = getAvg(prices);
+// console.log(`Ჩვენს მარაგში არსებული მანქანების საშუალო ფასი არის : ${average}`);
+
+function getMax(array) {
+    if (array.length ===0) {
+        return undefined;
+    }
 }
-let average = getAvg(prices);
-console.log(`Ჩვენს მარაგში არსებული მანქანების საშუალო ფასი არის : ${average}`);
+ 
+let max = array[0];
 
+for(let i = 1; i < array.length; i++) {
+    if(array[i] < max) {
+        max = array[i];
+    }
+    return max;
+}
 
+let prices = [35000, 30000, 18000, 10000];
 
+let maxElement = getMax(prices);
+
+console.log(maxElement);
